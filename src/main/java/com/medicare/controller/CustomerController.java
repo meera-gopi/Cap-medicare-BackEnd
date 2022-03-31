@@ -29,14 +29,14 @@ public class CustomerController {
 //	}
 	
 	//Save Customer Info
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-107-20-61-139.compute-1.amazonaws.com")
 	@PostMapping("/saveInfo")
 	public ResponseEntity<Customer> saveCustomer(@RequestBody Customer customer) {
 		System.out.println(customer.getUsername());
 		return new ResponseEntity<Customer> (customerService.save(customer),HttpStatus.CREATED);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-107-20-61-139.compute-1.amazonaws.com")
 	@PostMapping("/login")
 	public ResponseEntity<Users> authCustomer(@RequestBody Users cred){
 		return new ResponseEntity<Users> (customerService.authCustomer(cred.getUsername(), cred.getPassword()),HttpStatus.OK);
