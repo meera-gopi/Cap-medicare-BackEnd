@@ -34,7 +34,7 @@ public class EmployeeController {
 		return new ResponseEntity<Employee> (employeeService.saveEmployee(employee),HttpStatus.CREATED);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-107-20-61-139.compute-1.amazonaws.com")
 	@PostMapping("/login")
 	public ResponseEntity<Employee> authCustomer(@RequestBody Users cred){
 		System.out.println(cred.toString());
