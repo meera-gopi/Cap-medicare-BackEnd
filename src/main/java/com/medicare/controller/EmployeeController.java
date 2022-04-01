@@ -29,6 +29,7 @@ public class EmployeeController {
 	
 	
 	//Save Customer Info
+	@CrossOrigin(origins="http://ec2-107-20-61-139.compute-1.amazonaws.com")
 	@PostMapping("/saveInfo")
 	public ResponseEntity<Employee> saveCustomer(@RequestBody Employee employee) {
 		return new ResponseEntity<Employee> (employeeService.saveEmployee(employee),HttpStatus.CREATED);
