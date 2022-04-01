@@ -35,7 +35,7 @@ public class OrderController {
 	//@Autowired
 	//private CustomerService customerService;
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@PostMapping("/saveOrder")
 	public long saveOrder(@RequestBody OrderInfo info) {
 	
@@ -47,7 +47,7 @@ public class OrderController {
 		return order_id;
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@PostMapping("/addItem")
 	public String addItem(@RequestBody OrderInfo info) {
 		
@@ -71,31 +71,31 @@ public class OrderController {
 		
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@DeleteMapping("/removeItem/{itemId}")
 	public String removeItem(@PathVariable("itemId") long id) {
 		return orderItemsService.deleteItem(id);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@GetMapping("/allOrders/{custId}")
 	public List<Order> getOrderItems(@PathVariable("custId") long custId) {
 		return orderService.listAllOrderForCustomer(custId);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@GetMapping("/itemList/{orderId}")
 	public List<OrderItems> getItemList(@PathVariable("orderId") long orderId){
 		return orderItemsService.OrderItemsById(orderId);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@PutMapping("/paid/{orderId}")
 	public String updateStatusToPaid(@PathVariable("orderId") long orderId) {
 		return orderService.updateStatusToPaid(orderId);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@PutMapping("/updateQty/{quantity}/{id}")
 	public String updateStatusToPaid(@PathVariable("quantity") long quantity,@PathVariable("id") long id) {
 		return orderItemsService.updateQuantity(quantity, id);
