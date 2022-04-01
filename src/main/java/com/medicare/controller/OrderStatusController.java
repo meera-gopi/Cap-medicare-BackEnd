@@ -18,6 +18,7 @@ public class OrderStatusController {
 	@Autowired
 	private OrderStatusService orderStatusService;
 	
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@PostMapping("/addStatus")
 	public String addStatus(@RequestBody OrderStatus status) {
 		
@@ -25,6 +26,7 @@ public class OrderStatusController {
 		
 	}
 	
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@DeleteMapping("/removeStatus/{statusId}")
 	public String removeStatus(@PathVariable("statusId") long id) {
 		return orderStatusService.removeStaus(id);
