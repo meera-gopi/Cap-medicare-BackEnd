@@ -29,13 +29,13 @@ public class EmployeeController {
 	
 	
 	//Save Customer Info
-	@CrossOrigin(origins="http://ec2-107-20-61-139.compute-1.amazonaws.com")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@PostMapping("/saveInfo")
 	public ResponseEntity<Employee> saveCustomer(@RequestBody Employee employee) {
 		return new ResponseEntity<Employee> (employeeService.saveEmployee(employee),HttpStatus.CREATED);
 	}
 	
-	@CrossOrigin(origins="http://ec2-107-20-61-139.compute-1.amazonaws.com")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@PostMapping("/login")
 	public ResponseEntity<Employee> authCustomer(@RequestBody Users cred){
 		System.out.println(cred.toString());
