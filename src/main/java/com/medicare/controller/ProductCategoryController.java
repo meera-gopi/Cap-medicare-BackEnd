@@ -26,7 +26,7 @@ public class ProductCategoryController {
 	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@GetMapping("/")
 	public String getAllCategoryRedirect(){
-		return System.out.println("welcome");
+		return "welcome";
 	}
 	
 	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
