@@ -16,7 +16,7 @@ import com.medicare.Entity.Employee;
 import com.medicare.service.EmployeeService;
 
 @RestController
-@RequestMapping(value = "/employee", method = RequestMethod.GET)
+@RequestMapping(value = "medicare/employee", method = RequestMethod.GET)
 public class EmployeeController {
 	
 	@Autowired
