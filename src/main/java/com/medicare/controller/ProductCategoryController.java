@@ -23,18 +23,19 @@ public class ProductCategoryController {
 	@Autowired
 	private ProductCategoryService productCategoryService;
 	
-	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@GetMapping("/")
 	public String getAllCategoryRedirect(){
 		return "welcome";
 	}
 	
-	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
-	@GetMapping("/medicare/getCategory")
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
+	@GetMapping("/getCategory")
 	public List<ProductCategory> getAllCategory(){
 		return productCategoryService.getAllCategory();
 	}
 	
+	@CrossOrigin(origins="http://ec2-54-242-151-100.compute-1.amazonaws.com")
 	@PostMapping("/addCategory")
 	public String addCategory(@RequestBody ProductCategory category) {
 		return  productCategoryService.addCategory(category);
