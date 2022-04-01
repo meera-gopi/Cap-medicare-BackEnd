@@ -23,7 +23,7 @@ public class ProductCategoryController {
 	@Autowired
 	private ProductCategoryService productCategoryService;
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@GetMapping("/getCategory")
 	public List<ProductCategory> getAllCategory(){
 		return productCategoryService.getAllCategory();
