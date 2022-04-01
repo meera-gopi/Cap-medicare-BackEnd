@@ -26,13 +26,13 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;	
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@GetMapping("/prouctList")	
 	private List<Product> getAllgetAllProducts(){
 		return productService.getAllProducts();
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@PostMapping("/addProduct")
 	private String addProduct(@RequestBody ProductInfo info) {
 		
@@ -40,25 +40,25 @@ public class ProductController {
 		
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@DeleteMapping("/removeProduct/{productId}")
 		private String removeProduct(@PathVariable("productId") long id) {
 			return productService.removeProduct(id);
 		}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@PutMapping("/updateProductStatus/{productId}/{status}")
 	private String changeProductStatus (@PathVariable("productId") long id,@PathVariable("status") boolean status) {
 		return productService.changeProductStatus(status,id);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@PutMapping("/updateProductInfo")
 	private String updateProduct(@RequestBody ProductInfo info) {
 		return productService.updateProduct(info);
 	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
 	@GetMapping("/getProduct/{productId}")
 	private Product getProduct(@PathVariable("productId") long id) {
 		return productService.getProduct(id);
