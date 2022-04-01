@@ -24,9 +24,9 @@ public class ProductCategoryController {
 	private ProductCategoryService productCategoryService;
 	
 	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
-	@GetMapping("/medicare")
-	public List<ProductCategory> getAllCategoryRedirect(){
-		return this.getAllCategory();
+	@GetMapping("/")
+	public String getAllCategoryRedirect(){
+		return System.out.println("welcome");
 	}
 	
 	@CrossOrigin(origins="http://ec2-35-172-119-30.compute-1.amazonaws.com")
